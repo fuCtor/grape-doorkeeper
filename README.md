@@ -1,6 +1,8 @@
 grape-doorkeeper
 ================
 
+[![Code Climate](https://codeclimate.com/github/fuCtor/grape-doorkeeper.png)](https://codeclimate.com/github/fuCtor/grape-doorkeeper)
+
 Integration Grape with Doorkeeper
 
 ```ruby
