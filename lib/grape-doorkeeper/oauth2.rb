@@ -16,7 +16,7 @@ module GrapeDoorkeeper
       
       if filter_options[:only]
         return filter_options[:only].include?( action.to_sym )
-      elsif filter_options[:only]
+      elsif filter_options[:except]
         return !filter_options[:except].include?( action.to_sym )     
       end
       
