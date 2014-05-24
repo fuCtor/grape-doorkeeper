@@ -52,7 +52,7 @@ module GrapeDoorkeeper
               'Content-Type' => 'application/json',
               'X-Accepted-OAuth-Scopes' => scopes,
               'WWW-Authenticate' => "OAuth realm='#{options[:realm]}', error='#{error}'"
-            }
+            }.reject { |k,v| v.nil? }
     end
     
   end
