@@ -21,6 +21,11 @@ class API < Grape::API
   get :by, protected: false do
     {:by => 1 }
   end
+
+  # Use a different scope for this endpoint.
+  get :bar, scopes: [:write] do
+    {:bar=> 1 }
+  end
   
   resource :statuses do
     get :count do

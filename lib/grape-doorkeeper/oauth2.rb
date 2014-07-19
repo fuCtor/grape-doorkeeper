@@ -26,12 +26,16 @@ module GrapeDoorkeeper
     def verify_token(token_string)
       return unless protected_endpoint?      
       token = Doorkeeper::AccessToken.authenticate(token_string)
-      
+      doorkeeper = options[:doorkeeper]
+      if env['api.endpoint'].options[:route_options].key?(:scopes)
+        doorkeeper = Doorkeeper::DoorkeeperForBuilder.create_doorkeeper_for(:all, scopes: env['api.endpoint'].options[:route_options][:scopes])
+      end
+
       if token
         if !token.accessible?
           error_out(401, 'expired_token')
         else          
-          if options[:doorkeeper].send(:validate_token_scopes, token)
+          if doorkeeper.send(:validate_token_scopes, token)
             env['api.token'] = token
           else
             error_out(403, 'insufficient_scope')
