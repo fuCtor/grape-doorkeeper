@@ -34,8 +34,8 @@ module GrapeDoorkeeper
       if token
         if !token.accessible?
           error_out(401, 'expired_token')
-        else          
-          if doorkeeper.send(:validate_token_scopes, token)
+        else 
+          if token.includes_scope?(doorkeeper.scopes)
             env['api.token'] = token
           else
             error_out(403, 'insufficient_scope')
