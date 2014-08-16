@@ -7,19 +7,19 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Alexey Shcherbakov"]
   s.email       = ["schalexey@gmail.com"]
-  s.homepage    = "https://github.com/intridea/grape"
+  s.homepage    = "https://github.com/fuCtor/grape-doorkeeper"
   s.summary     = %q{Gem for auth in grape via doorkeeper.}
   s.description = %q{Gem for auth in grape via doorkeeper.}
   s.license     = "MIT"
 
   s.rubyforge_project = "grape-doorkeeper"
 
-  s.add_runtime_dependency 'grape', '>= 0.6.1'
-  s.add_runtime_dependency 'doorkeeper'
+  s.add_runtime_dependency 'grape', '~> 0.6'
+  s.add_runtime_dependency 'doorkeeper', '~> 0'
     
-  s.add_development_dependency 'rack-test'
+  s.add_development_dependency 'rack-test', '~> 0'
   s.add_development_dependency 'rspec', '~> 2.9'
-  s.add_development_dependency 'bundler'
+  s.add_development_dependency 'bundler', '~> 0'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
