@@ -3,7 +3,7 @@ require 'doorkeeper/doorkeeper_for'
 module GrapeDoorkeeper
   # OAuth 2.0 authorization for Grape APIs.
   
-  class Middleware < Grape::Middleware::Auth::OAuth2
+  class Middleware < GrapeDoorkeeper::OAuth2Base
   
     def protected_endpoint?
       endpoint = env['api.endpoint']
