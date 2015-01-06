@@ -14,12 +14,12 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "grape-doorkeeper"
 
-  s.add_runtime_dependency 'grape', '~> 0.9'
-  s.add_runtime_dependency 'doorkeeper', '~> 1.4.0'
+  s.add_runtime_dependency 'grape', '~> 0.10'
+  s.add_runtime_dependency 'doorkeeper', '~> 2.0'
     
   s.add_development_dependency 'rack-test', '~> 0'
   s.add_development_dependency 'rspec', '~> 2.9'
-  s.add_development_dependency 'bundler', '~> 1.7.0'
+  s.add_development_dependency 'bundler', '~> 1.7'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
